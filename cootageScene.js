@@ -33,17 +33,17 @@ var MainScene = createReactClass({
                              py:require('./res/grid_bg.jpg'),
                              nz:require('./res/grid_bg.jpg'),
                              pz:require('./res/grid_bg.jpg')}} />
-        <ViroOrbitCamera position={[0, 0, -0]} active={true} focalPoint={[0, 0, -1]} />
-        <ViroDirectionalLight direction={[0, 0, -1]} color="#ffffff" />
+        <ViroOrbitCamera position={[0, 0, -0]} active={true} focalPoint={[0, 0, -8]} />
+        <ViroDirectionalLight direction={[0, 0, -9]} color="#ffffff" />
 
         <ViroAmbientLight color="#aaaaaa" />
 
          <ViroNode position={[0, -1, -6]} >
             <Viro3DObject source={require('./res/cottage/cottage_obj.obj')}
                       // resources={[require('./res/cottage/cottage_obj.mtl')]}  
-                      materials={["hentai"]} scale={[0.5,0.5,0.5]} highAccuracyEvents={true} type="OBJ" />
+                      materials={["cottage"]} scale={[0.2,0.2,0.2]} highAccuracyEvents={true} type="OBJ" />
        </ViroNode>
-       <ViroText text="Toon Girl" position={[0.0, 2, -3]} style={styles.textStyle}
+       <ViroText text="Cottage with textures" position={[0.0, 2, -3]} style={styles.textStyle}
                  transformBehaviors={["billboardY"]}/>
      </ViroScene>
     );
@@ -51,7 +51,7 @@ var MainScene = createReactClass({
 });
 
 var materials = ViroMaterials.createMaterials({
-   hentai: {
+   cottage: {
      lightingModel: "Blinn",
      diffuseTexture: require('./res/cottage/cottage_diffuse.png'),
      writesToDepthBuffer: true,
