@@ -5,6 +5,7 @@ import {
 
 var vrScenes = {
   'hentaiCharacter': require('./cootageScene'),
+  'viroTheatre': require('./viroTheatre')
 }
 
 
@@ -12,7 +13,10 @@ export default () => {
   return (
     <ViroVRSceneNavigator
       initialScene={{
-        scene: vrScenes['hentaiCharacter'],
-      }}/>
+        scene: vrScenes['viroTheatre'],
+      }}
+      vrModeEnabled={true}
+      pbrEnabled = {true}  
+      />
   );
 };

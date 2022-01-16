@@ -40,7 +40,7 @@ var MainScene = createReactClass({
 
          <ViroNode position={[0, -1, -6]} >
             <Viro3DObject source={require('./res/cottage/cottage_obj.obj')}
-                      // resources={[require('./res/cottage/cottage_obj.mtl')]}  
+                       resources={[require('./res/cottage/cottage_obj.mtl')]}  
                       materials={["cottage"]} scale={[0.2,0.2,0.2]} highAccuracyEvents={true} type="OBJ" />
        </ViroNode>
        <ViroText text="Cottage with textures" position={[0.0, 2, -3]} style={styles.textStyle}
