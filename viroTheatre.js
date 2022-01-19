@@ -24,6 +24,7 @@ var videos = [
 ];
 
 var ViroTheatre = createReactClass({
+
   getInitialState() {
     return {
       videoControlsAnimation:"fadeIn",
@@ -34,11 +35,14 @@ var ViroTheatre = createReactClass({
     }
   },
 
+
   render: function() {
+    const source = this.props.sceneNavigator.viroAppProps
+    console.log(source)
     return (
         <ViroScene onClick={this._onVideoTapped} reticleEnabled={this.state.videoControlsAnimation=="fadeIn"}>
           <Viro360Image source={require('./res/dark_theatre.jpg')} />
-          <ViroVideo ref={VIDEO_REF} source={require('./res/rickRoll.mp4')} volume={1.0}
+          <ViroVideo ref={VIDEO_REF} source={source?require('./res/DocSta.mp4'):require('./res/rickRoll.mp4')} volume={1.0}
             position={[0, 3.9, -45]} scale={[44, 22, 1]} loop={this.state.loopVideo}
             paused={this.state.videoPaused} />
 
