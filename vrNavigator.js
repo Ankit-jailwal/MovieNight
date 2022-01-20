@@ -17,7 +17,7 @@ export const VrNavigaton = ({route, navigation}) => {
         scene: vrScenes[name],
       }}
       viroAppProps= {source}
-      vrModeEnabled={true}
+      vrModeEnabled={false}
       pbrEnabled = {true}  
       />
   );
@@ -31,7 +31,7 @@ export const VrNavigaton = ({route, navigation}) => {
                      example : true
                 }
               }}
-              vrModeEnabled={true}
+              vrModeEnabled={false}
               pbrEnabled = {true}  
               />)
     }

@@ -1,7 +1,7 @@
 
 'use strict';
 import React, { Component } from 'react';
-
+import { StatusBar } from 'react-native';
 import {
   ViroScene,
   ViroVideo,
@@ -41,13 +41,12 @@ var ViroTheatre = createReactClass({
     console.log(source)
     return (
         <ViroScene onClick={this._onVideoTapped} reticleEnabled={this.state.videoControlsAnimation=="fadeIn"}>
+        <StatusBar hidden={true} />
           <Viro360Image source={require('./res/dark_theatre.jpg')} />
           <ViroVideo ref={VIDEO_REF} source={source?require('./res/DocSta.mp4'):require('./res/rickRoll.mp4')} volume={1.0}
             position={[0, 3.9, -45]} scale={[44, 22, 1]} loop={this.state.loopVideo}
             paused={this.state.videoPaused} />
-
             {this._renderVideoControl()}
-
         </ViroScene>
     );
   },
@@ -75,27 +74,7 @@ var ViroTheatre = createReactClass({
             position={[0, -0.27,-2.1]}
             source={require("./res/player_controls_container.png")} />
 
-          <ViroButton
-            position={[-buttonSize-0.1,0,-2]}
-            scale={[1, 1, 1]}
-            width={buttonSize}
-            height={buttonSize}
-            source={require("./res/previous.png")}
-            hoverSource={require("./res/previous_hover.png")}
-            clickSource={require("./res/previous_hover.png")}
-            onClick={this._playPreviousVideo} />
-
           {this._renderPlayControl()}
-
-          <ViroButton
-            position={[buttonSize+0.1, 0,-2]}
-            scale={[1, 1, 1]}
-            width={buttonSize}
-            height={buttonSize}
-            source={require("./res/skip.png")}
-            hoverSource={require("./res/skip_hover.png")}
-            clickSource={require("./res/skip_hover.png")}
-            onClick={this._playNextVideo} />
         </ViroNode>
     );
   },

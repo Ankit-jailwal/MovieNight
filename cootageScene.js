@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import {StyleSheet} from 'react-native';
-
+import { StatusBar } from 'react-native';
 import {
   ViroDirectionalLight,
   ViroAmbientLight,
@@ -27,6 +27,7 @@ var MainScene = createReactClass({
   render: function() {
     return (
      <ViroScene style={styles.container}>
+     <StatusBar hidden={true} />
         <ViroSkyBox source={{nx:require('./res/grid_bg.jpg'),
                              px:require('./res/grid_bg.jpg'),
                              ny:require('./res/grid_bg.jpg'),
