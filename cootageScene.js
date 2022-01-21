@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import {StyleSheet} from 'react-native';
-
+import { StatusBar } from 'react-native';
 import {
   ViroDirectionalLight,
   ViroAmbientLight,
@@ -27,6 +27,7 @@ var MainScene = createReactClass({
   render: function() {
     return (
      <ViroScene style={styles.container}>
+     <StatusBar hidden={true} />
         <ViroSkyBox source={{nx:require('./res/grid_bg.jpg'),
                              px:require('./res/grid_bg.jpg'),
                              ny:require('./res/grid_bg.jpg'),
@@ -40,7 +41,7 @@ var MainScene = createReactClass({
 
          <ViroNode position={[0, -1, -6]} >
             <Viro3DObject source={require('./res/cottage/cottage_obj.obj')}
-                       resources={[require('./res/cottage/cottage_obj.mtl')]}  
+                       resources={[require('./res/cottage/cottage.mtl')]}  
                       materials={["cottage"]} scale={[0.2,0.2,0.2]} highAccuracyEvents={true} type="OBJ" />
        </ViroNode>
        <ViroText text="Cottage with textures" position={[0.0, 2, -3]} style={styles.textStyle}

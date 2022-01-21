@@ -1,22 +1,28 @@
 import React from 'react';
-import {
-  ViroVRSceneNavigator,
-} from '@viro-community/react-viro';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Dashboard } from './dashBoard';
+import { VrNavigaton } from './vrNavigator';
 
-var vrScenes = {
-  'hentaiCharacter': require('./cootageScene'),
-  'viroTheatre': require('./viroTheatre')
+const Stack = createNativeStackNavigator();
+
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Dashboard"
+          component={Dashboard}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="VrMode"
+          component={VrNavigaton}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
-
-export default () => {
-  return (
-    <ViroVRSceneNavigator
-      initialScene={{
-        scene: vrScenes['viroTheatre'],
-      }}
-      vrModeEnabled={true}
-      pbrEnabled = {true}  
-      />
-  );
-};
+export default App;
